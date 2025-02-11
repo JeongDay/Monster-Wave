@@ -6,7 +6,7 @@ public class Goblin : Monster
     {
         base.Init();
         
-        hp = 1f;
+        hp = 3f;
         speed = 3f;
     }
 }

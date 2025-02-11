@@ -6,7 +6,7 @@ public class Troll : Monster
     {
         base.Init();
 
-        hp = 3f;
+        hp = 10f;
         speed = 1f;
     }
 }
