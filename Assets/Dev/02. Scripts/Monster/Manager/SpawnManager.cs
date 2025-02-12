@@ -10,7 +10,12 @@ public class SpawnManager : MonoBehaviour
     // 생성하는 주기
     public float maxTime = 3f;
     public float timer = 0f;
-    
+
+    void Start()
+    {
+        InvokeRepeating("CreateMonster", 0f, 3f);
+    }
+
     //생성 기능
     void Update()
     {
@@ -33,6 +38,18 @@ public class SpawnManager : MonoBehaviour
             monsterObj.transform.position = this.transform.position;
 
         }
+    }
+
+    private void CreateMonster()
+    {
+        int randomIndex = Random.Range(0, 3);
+            
+        GameObject monsterObj = Instantiate(spawnPrefabs[randomIndex]);
+            
+        monsterObj.transform.SetParent(this.transform);
+            
+        // 생성한 몬스터의 위치 = SpawnManager의 위치로 적용
+        monsterObj.transform.position = this.transform.position;
     }
 }
 
