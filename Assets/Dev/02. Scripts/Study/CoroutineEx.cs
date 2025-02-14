@@ -19,6 +19,5 @@ public class CoroutineEx : MonoBehaviour
         intList.Insert(3, 100);
 
         intList.RemoveAt(3);
-
     }
 }
