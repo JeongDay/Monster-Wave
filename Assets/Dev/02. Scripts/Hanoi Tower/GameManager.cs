@@ -43,5 +43,26 @@ namespace Hanoi_Tower
 
             return obj;
         }
+
+        public void OnShowAnswer()
+        {
+            ShowAnswer((int)e_HanoiLevel, 0, 1, 2);
+        }
+
+        private void ShowAnswer(int count, int from, int temp, int to)
+        {
+            if (count == 0) return;
+
+            if (count == 1)
+                Debug.Log($"{count}번 도넛을 {from}에서 {to}로 이동");
+            else
+            {
+                ShowAnswer(count - 1, from, to, temp);
+                
+                Debug.Log($"{count}번 도넛을 {from}에서 {to}로 이동");
+                
+                ShowAnswer(count - 1, temp, from, to);
+            }
+        }
     }
 }
